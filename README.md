@@ -26,35 +26,6 @@ This tool is a lightweight “self-healing” process that can run in the backgr
 
 ---
 
-## Folder Structure
-
-linux-fault-recovery-system/
-│
-├── fault_recovery/
-│ ├── daemon.py # main watcher and rule matcher
-│ ├── actions.py # handles restart/remount operations
-│ ├── filters.py # regex filters
-│ └── storage.py # event database handling
-│
-├── config/
-│ └── rules.yaml # detection rules
-│
-├── scripts/
-│ ├── generate_demo_logs.sh # creates demo log lines
-│ └── install_systemd.sh # optional service setup
-│
-├── logs/
-│ └── syslog_demo.log
-│
-├── requirements.txt
-├── LICENSE
-└── README.md
-
-yaml
-Copy code
-
----
-
 ## How to run
 
 ```bash
