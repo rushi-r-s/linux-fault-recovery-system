@@ -34,28 +34,22 @@ python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\act
 pip install -r requirements.txt
 To start the demo:
 
-bash
-Copy code
+```bash
 # start daemon using sample log
 python fault_recovery/daemon.py --rules config/rules.yaml --logfile logs/syslog_demo.log
 
 # in another terminal, simulate faults
 bash scripts/generate_demo_logs.sh
-Detected issues will appear in the console and get recorded in events.db.
 
-Example output
-less
-Copy code
+Example output:
 [INFO] Monitoring started (rules: 3)
 [DETECT] I/O error found in log
 [ACTION] remount_volume on /data
 [DETECT] Kernel panic detected
 [ACTION] restart_service critical-daemon.service
+
 Config file (config/rules.yaml)
 Example:
-
-yaml
-Copy code
 rules:
   - id: kernel_panic
     match: "kernel panic|BUG:"
