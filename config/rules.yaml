@@ -1,0 +1,15 @@
+rules:
+  - id: kernel_panic
+    match: "kernel panic|BUG:"
+    action: restart_service
+    service: critical-daemon.service
+
+  - id: io_error
+    match: "I/O error"
+    action: remount_volume
+    mount: /data
+
+  - id: service_failed
+    match: "Unit .* failed|Failed to start"
+    action: restart_service
+    service: target.service
